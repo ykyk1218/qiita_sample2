@@ -8,9 +8,9 @@
 
 import UIKit
 
-class QiitaDetailViewController: UIViewController,UIWebViewDelegate,QiitaDelegate{
+class QiitaDetailViewController: UIViewController,UIWebViewDelegate {
     var qiitaUrl: String = ""
-    let tableView = QiitaTableViewController()
+    //let tableView = QiitaTableViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -23,16 +23,16 @@ class QiitaDetailViewController: UIViewController,UIWebViewDelegate,QiitaDelegat
         webView.loadRequest(NSURLRequest(URL: NSURL(string: self.qiitaUrl)!))
         
         webView.delegate = self
-        self.tableView.qiitaDelegate = self
+        //self.tableView.qiitaDelegate = self
     }
 
     //ページが読み終わったときに呼ばれる関数
     func webViewDidFinishLoad(webView: UIWebView) {
-        println(self.qiitaUrl)
+        print(self.qiitaUrl)
     }
     //ページを読み始めた時に呼ばれる関数
     func webViewDidStartLoad(webView: UIWebView) {
-        println("ページ読み込み開始しました！")
+        print("ページ読み込み開始しました！")
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,7 +40,7 @@ class QiitaDetailViewController: UIViewController,UIWebViewDelegate,QiitaDelegat
     }
     
     func qiitaUrlDelegate(qiitaUrl: String) {
-        println("call delegate")
+        print("call delegate")
         self.qiitaUrl = qiitaUrl
         
     }

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        var navController = UINavigationController(rootViewController: QiitaTableViewController())
+        let navController = UINavigationController(rootViewController: MainViewController())
         
         self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()
